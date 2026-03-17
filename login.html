@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Auto-Trade Hub</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #eef1f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #003366, #005599);
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 5px;
+    }
+
+    nav {
+      background-color: #004080;
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    .login-container {
+      max-width: 420px;
+      margin: 60px auto;
+      background-color: white;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .login-container:hover {
+      transform: translateY(-4px);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #005599;
+      box-shadow: 0 0 6px rgba(0, 85, 153, 0.4);
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #005599;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #003f73;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Login - Auto-Trade Hub</h1>
+    <p>Access your account and manage your listings</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="buy.html">Buy</a>
+    <a href="sell.html">Sell</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Login Box -->
+  <section class="login-container">
+    <h2>Login to Your Account</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username or Email</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Auto-Trade Hub. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript to simulate login -->
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Stop form from submitting
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+
+      // Dummy credentials (change as needed)
+      const validUsername = "user123";
+      const validPassword = "password123";
+
+      if (username === validUsername && password === validPassword) {
+        // Prompt for user’s name
+        const name = prompt("Login successful! 🎉 Please enter your name:");
+
+        if (name) {
+          alert("Welcome, " + name + "! You are now logged in to Auto-Trade Hub.");
+        } else {
+          alert("Welcome back! You are now logged in to Auto-Trade Hub.");
+        }
+
+        // Redirect to a dashboard page (optional)
+        // window.location.href = "dashboard.html";
+
+      } else {
+        alert("❌ Invalid username or password. Please try again.");
+      }
+    });
+  </script>
+
+</body>
+</html>
